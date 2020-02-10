@@ -1,0 +1,42 @@
+@media screen and (max-width: 800px){
+    header nav{
+        display: block;
+    }
+    nav ul{
+        display: none;
+    }
+    nav ul li{
+        margin: 15px 0;
+    }
+    main>section:nth-of-type(odd){
+        display: block;
+    }
+    
+    main>section:nth-of-type(odd)>div:first-child{
+/*        border: 2px solid red;*/
+/*        padding: 0 5%;*/
+        padding: 50px 40px 25px 35px;
+    }
+    
+    main>section:nth-of-type(odd)>div:first-child h2{
+        font-size: 
+    }
+    
+    main>section:nth-of-type(even){
+        display: block;
+    }
+    
+    main>section:nth-of-type(even)>:first-child{
+/*        border: 2px solid green;*/
+    }
+    
+    main>section:nth-of-type(even)>:first-child h2{
+        font-size: 4vmax;
+    }
+    main>section:nth-of-type(even)>:first-child p{
+        font-size: 1.4rem;
+    }
+    footer>div{
+        display: block;
+    }
+}

@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    
+    --color: rgba(125,10,160,0.8);
+    --bg-color: rgba(230,230,230,0.55);
+    --div-padding: 30px;
+    --nav-link-padding: 15px;
+    --blend-mode: soft-light;
+    --blend-mode-bg-color: rgba(20,20,20,0.3);
+    --btn-color: white;
+    --btn-bg-color: rgba(0,0,0,0.6);
+    --nav-bg-color: rgba(178, 175, 174,0.3);
+    --gen-font-family: verdana;
+    --nav-font-size: 0.8rem;
+    --bg-odd-gradient: linear-gradient(-45deg, rgba(50,50,50,0.8),rgba(0,0,0,0.4));
+    --bg-even-gradient: linear-gradient(30deg, silver,rgb(168, 165, 161));
+}
+
+body{
+    font-family: verdana;
+}
+
+.wrapper{
+    width: 100%;
+}
+
+header{
+    padding: var(--div-padding);
+    background: url("../images/dice.jpg") no-repeat fixed center;
+    background-size: cover;
+    min-height: 100vh;
+    background-color: var(--blend-mode-bg-color,rgba(0,0,0,0.3));
+    background-blend-mode: soft-light;
+}
+
+header>div{
+/*
+    display: flex;
+    flex-direction: column;
+*/
+/*    justify-content: flex-start;*/
+}
+
+header nav{
+    width: 90%;
+    margin: auto;
+    position: fixed;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--nav-bg-color);
+    padding: var(--nav-link-padding, 15px) 0;
+/*    border: 2px solid red;*/
+/*    padding: var(--nav-link-padding);*/
+}
+
+header nav>:first-child{
+    flex-grow: 1
+}
+
+nav ul{
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    color: var(--color);
+}
+
+nav ul li a{
+    padding: 5px var(--nav-link-padding, 15px);
+    font-size: var(--nav-font-size, 1.5vmax);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--btn-color, white);
+    transition: all 0.4s ease;
+}
+
+nav ul li a:hover{    
+    color: rgb(100,100,100);
+    padding-left: 20px;
+    border-left: 7px solid var(--btn-color,white);
+}
+
+nav ul button{
+    background-color: var(--btn-bg-color,rgba(0,0,0,0.2););
+    border: none;
+    padding: var(--nav-link-padding, 15px);
+    color: var(--btn-color, white);
+    font-size: var(--nav-font-size, 1.5vmin);
+    text-transform: uppercase;
+    transition: all 0.4s ease-out;
+    border-radius: 0;
+}
+
+nav ul button:hover{
+    background-color: var(--btn-color);
+    color: var(--btn-bg-color,rgba(0,0,0,0.8));
+}
+
+.header-content{
+    color: rgb(54, 53, 54);
+}
+
+.header-content h1{    
+    font-size: 3vmax;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    margin-bottom: 3.5rem;
+}
+
+.header-content p{
+    font-size: 2vmax;
+    margin: 5px 0;
+    font-family: cursive;
+    text-transform: capitalize;
+}
+
+/*GROUPING STYLES OF THE MAIN ELEMENT*/
+/*CATCHING ALL DIVS ODD AND EVEN*/
+main>section:nth-of-type(odd){
+    display: flex;
+    background: var( --bg-odd-gradient, linear-gradient(-45deg, rgba(50,50,50,0.8),rgba(0,0,0,0.4)) );
+    color: white;
+}
+
+main>section:nth-of-type(odd)>*{
+    flex: 1;
+}
+
+/*##########################*/
+main>section:nth-of-type(odd)>:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 10px 25px 60px;
+    transition: all 0.5s;
+}
+
+main>section:nth-of-type(odd)>:first-child.slideIn{
+    transform: translateX(-105%);
+    opacity: 0;
+    border: 2px solid red;    
+}
+
+.slideIn:active{
+    transform: translateX(20%);
+    opacity: 1;
+}
+
+
+main>section:nth-of-type(odd)>figure{
+    height: 100vh;
+    width: 100%;
+/*    border: 2px solid green;*/
+}
+
+main>section:nth-of-type(odd)>figure img{
+    width: 100%;
+    display: block;
+    margin: auto;
+    height: 100%;
+}
+
+
+main>section:nth-of-type(odd)>figure figcaption{
+    background-color: rgba(250,250,250,0.55);
+    color: rgba(0,0,0,0.75);
+    text-transform: uppercase;
+    font-size: 2rem;
+    height: 0%;
+    padding: 0 60px;
+    overflow: hidden;
+    font-family: arial;
+}
+
+main>section:nth-of-type(even){
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-even-gradient, linear-gradient(30deg, silver,rgb(168, 165, 161)) );
+/*    background: var( --bg-gradient, linear-gradient(-45deg, rgba(50,50,50,0.8),rgba(0,0,0,0.4)) );*/
+    padding: 30px 0;
+}
+
+main>section:nth-of-type(even)>:first-child{
+    width: 75%;
+    margin: 10px auto;
+    text-align: center;
+    padding: 25px;
+    font-weight: bold;
+}
+
+main>section:nth-of-type(even) figure{
+    width: 88%;
+    margin: auto;
+    height: 800px;
+/*    border: 2px solid red;*/
+}
+
+main>section:nth-of-type(even) figure img{
+    display: block;
+    width: 100%;
+    height: 90%;
+}
+/* **END**CATCHING ALL DIVS ODD AND EVEN*/
+
+/*GENERAL BUTTONS*/
+button{
+    border: 2px solid white;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 15px auto;
+    margin-right:10px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s ease-in;
+}
+
+button:hover{
+    background-color: rgba(0,0,0,0.45);
+}
+/* ^^END OF GENERAL BUTTONS^^*/
+
+
+
+
+/*ODD TYPE 1*/
+/*################*/
+/*
+.brand-groups>div{
+    transform: translateX(-105%);
+    opacity: 0;
+}
+*/
+/*#######################*/
+
+
+.brand-groups blockquote{
+    font-size: 1.7rem;
+    font-weight: bold;
+/*    border: 2px solid red;*/
+}
+
+.brand-groups ul{
+    list-style: none;
+    margin: 30px 0;
+}
+
+.brand-groups ul li{
+    font-size: 4.2vmax;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.brand-groups ul li:hover{
+    color: rgb(250, 158, 141);
+}
+
+.brand-groups p a{
+    margin: 10px 0;
+    font-size: 1.2rem;
+/*    border: 2px solid red;*/
+    text-decoration: underline;
+    color: white;
+    text-transform: uppercase;
+}
+
+.brand-groups p a:hover{
+    color: rgb(242, 234, 205);
+}
+
+/*EVEN TYPE 1*/
+.award-h1{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.award-h2{
+    font-size: 70px;    
+}
+
+.award>:nth-child(1)>p:nth-child(3){
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+/*
+@keyframes rollbg{
+    0%{
+        background: linear-gradient(to right, blue,yellow);
+    }
+    50%{
+        background: linear-gradient(to right, red,pink);
+    }
+}
+*/
+
+/*ODD TYPE 2*/
+/*
+.Stores>div{
+    transform: translateX(-105%);
+    opacity: 0;
+}
+*/
+
+.Stores>div>div:first-child{
+    text-transform: uppercase;
+/*    border: 2px solid red;*/
+}
+
+.Stores>div>div:first-child h2{
+    margin: 40px 0;
+    font-size: 2.5rem;
+}
+
+.Stores>div>div:nth-child(2) p{
+/*    border: 2px solid white;*/
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.Stores a{
+    color: rgb(200,200,200);
+    text-decoration: underline;
+}
+
+.rollover{
+    height: 99%;
+/*    border: 2px solid red;*/
+}
+
+/*EVEN TYPE 2*/
+.audience-target{
+/*
+    background: linear-gradient(180deg, rgba(0,0,0,0.85),rgba(20,20,20,0.35),rgba(0,0,0,0.85));
+*/
+    color: white;
+}
+
+.audience-target>div>*{
+    margin: 10px 0;
+}
+
+.audience-target h2{
+    font-size: 5.8vmax;
+    font-family: arial;
+/*    border: 2px solid red;*/
+}
+
+.audience-target p{
+    font-size: 2rem;
+}
+
+
+/*ODD TYPE 3*/
+.coverage{
+    background-color: white;
+    color: black;
+}
+
+.coverage>div p:first-child{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.coverage h2{
+    font-size: 4rem;
+}
+
+.coverage>div>div:nth-of-type(1){
+    padding: 20px 0;
+}
+
+/*FOOTER SECTION*/
+footer{
+    background-color: black;
+    padding: 100px 30px;
+    min-height: 100vh;
+}
+
+footer>div{
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: auto;
+}
+
+footer>div>*{
+/*    border: 1px solid red;*/
+    padding: 10px;
+}
+
+footer h2{
+    color: rgba(240, 240, 240, 0.94);
+    text-transform: uppercase;
+    margin: 13px 0;
+}
+
+footer p{
+    color: rgba(200,205,200,0.7);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    word-wrap: break-word;
+}
+

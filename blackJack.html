@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Black Jack Game</title>
+</head>
+    <body>
+        <h1>Black Jack</h1>
+        <h4>By Adeyemi Sola <u> Following Mark Zamyota</u></h4>
+        <br>
+        
+        <p id="text-area">Welcome to Blackjack!</p>
+        <button id="new-game-button">New Game</button>
+        <button id="hit-button">Hit!</button>
+        <button id="stay-button">Stay</button>
+        
+    </body>
+    <script>
+        //BUILDING PROJECT BLACKJACK!
+        //STARTING WITH PRIMITIVE VARIABLES
+//        let card1 = "Ace of Spades";
+//        let card2 = "Ten of Hearts";
+//        
+//        console.log("Welcome to Blackjack!");
+//        console.log("You are dealt: ");
+//        console.log(" "+card1);
+//        console.log(" "+card2);
+        
+        //USING ARRAY TO STORE VARIABLES
+//        let deck = [
+//            "Ace of Spades",
+//            "Two of Spades",
+//            "Three of Spades"
+//        ]
+//        
+//        let playerCards = [ deck[0], deck[2] ];
+        console.log("Welcome to Blackjack!");
+        console.log("You are dealt: ");
+//        
+//        console.log(" "+playerCards[0]);
+//        console.log(" "+playerCards[1]);
+
+        //USING FOR_LOOPS TO CREATE ARRAYS
+        let suits = ['Hearts','Clubs','Diamond','Spades'];
+        let values = ['Ace','King','Queen','Jack',
+                     'Ten','Nine','Eight','Seven',
+                      'Six','Five','Four','Three','Two'];
+        
+        function createDeck(){
+            let deck = [];
+            let cards = {};
+            for(let row = 0; row < suits.length; ++row){
+                for(let col = 0; col < values.length; ++col){
+                    cards = {
+                        suit: suits[row],
+                        value: values[col]
+                    }
+                    deck.push(cards);
+                }
+            }
+            return deck;
+        }
+        
+        let deck = createDeck();
+        
+//        for(let i in deck ){
+//            console.log(deck[i]);
+//        }
+                
+        function getNextCard(){
+            return deck.shift();
+        }
+        
+        function getCardString(card){
+            return card.value + ' of ' + card.suit;
+        }
+        
+        
+        console.log("Welcome to Blackjack!");
+        console.log("You are dealt: ");
+        
+        //Pass Object to the GetCardString Function
+        
+        let playerCards = [getNextCard(), getNextCard()];
+        
+        console.log(" " + getCardString(playerCards[0]));
+        console.log(" " + getCardString(playerCards[1]));
+        
+        let textArea = document.getElementById('text-area');
+        let newGameBtn = document.getElementById('new-game-button');
+        let hitButton = document.getElementById('hit-button');
+        let stayButton = document.getElementById('stay-button');
+        
+        hitButton.style.display = 'none';
+        stayButton.style.display = 'none';
+        
+        newGameBtn.addEventListener('click', function(){
+            textArea.innerText = 'Game Started...'
+            newGameBtn.style.display = 'none';
+//            newGameBtn.style.transition = 'all 2s ease-in';
+            
+            hitButton.style.display = 'inline';
+//            hitButton.style.transition = 'all 2s ease-in';
+            
+            stayButton.style.display = 'inline';
+//            stayButton.style.transition = 'all 2s ease-in';
+        });
+        
+    </script>
+    
+    
+</html>

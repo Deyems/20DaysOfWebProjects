@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>Highlight Your Boxes</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: orange;
+        }
+        
+        .wrapper{
+            width: 100%;
+            border: 1px solid red;
+            padding: 5%;
+        }
+        
+        .app-bg{
+            width: 40%;
+            margin: auto;
+/*            border-radius: 10px;*/
+/*            border: 3px solid green;*/
+        }
+        
+        .app-bg>div{
+            display: flex;
+            justify-content: center;
+/*            border: 2px solid purple;*/
+            background-color: rgb(250,250,250);
+            color: rgb(210,210,210);
+            border-bottom: 2px solid rgb(200,200,200);
+        }
+        
+        .app-bg>div:first-child{
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .app-bg>div:last-child{
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .app-bg>div:hover{
+            background-color: rgba(255,255,255,0.9);
+        }
+        
+        .app-bg>div div:first-child{
+            flex: 1;
+            border-right: 2px solid rgb(200,200,200);
+            padding: 10px 10px;
+            text-align: center;
+        }
+        
+        input[type="checkbox"]{
+            width: 20px;
+            height: 19px;
+        }
+        
+        .app-bg>div div:last-child{
+            flex: 6;
+            padding: 10px 15px;
+/*            border: 1px solid red;*/
+        }
+        
+    </style>
+    
+    <div class="wrapper">
+        <div class="app-bg">
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description One</div>
+            </div>
+            
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description Two</div>
+            </div>
+            
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description Three</div>
+            </div>
+            
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description Four</div>
+            </div>
+            
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description Five</div>
+            </div>
+            
+            <div>
+                <div><input type="checkbox"></div>
+                <div class="description">Description Six</div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+    <script>
+        const items = document.querySelectorAll('.app-bg>div');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let lastChecked;
+        
+//        console.log(items);
+        for(let item of checkboxes){
+            item.addEventListener('click',handleCheck);
+        }
+        
+        function handleCheck(e){
+//            console.log(e);
+            let inBetween = false;
+            
+            if(e.shiftKey && this.checked){
+//                console.log(this.checked);
+                for(let item of checkboxes){
+                    console.log(item);
+                    if(item === this || item === lastChecked){
+                        inBetween = !inBetween;
+                        console.log('Starting to check inbetween');
+                    }
+                    
+                    if(inBetween){
+                        item.checked = true;
+                    }
+                    
+                }
+            }
+            
+            lastChecked = this;
+        }
+    </script>
+</html>

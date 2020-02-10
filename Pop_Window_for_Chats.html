@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html en="utf-8">
+    <head>
+        <title>PopUp Window</title>
+        <link rel="stylesheet" href="css/popUpChat.css">
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            
+            <div class="chat-area">
+                <header>
+                    <figure>
+                        <img src="imgEdustage/img/logo.png">
+                    </figure>
+                    <div><button type="button">&times;</button></div>
+                </header>
+                <section>
+                    <p>Hi, how may we be of help?</p>
+                    <form action="">
+                        <div class="inp-grp">
+                            <textarea name="msg" placeholder="Enter your Comment..." required class="msg"></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" id="submit" value="Send" name="submit">
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="start-chat">
+                <div class="circle-body">Chat Me</div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let chatStart = document.querySelector('.start-chat');
+        let chatBox = document.querySelector('.chat-area');
+        let closeBtn = document.querySelector('button');
+        let sendBtn = document.querySelector('#submit');
+        
+        chatStart.addEventListener('click',popUpChat);
+        function popUpChat (){
+//            chatBox.style.display = 'block';
+//            chatBox.style.marginTop = '15px';
+            chatBox.style.transition = 'all 1s ease-out';
+            chatBox.style.opacity = '1';
+        }
+        
+        closeBtn.addEventListener('click',closePopUpChat);
+        function closePopUpChat(){
+//            chatStart.style.display = 'none';
+            chatBox.style.opacity = '0';
+        }
+        
+        sendBtn.addEventListener('click',showMessage);
+        function showMessage(){
+            
+        }
+        
+    </script>
+</html>
