@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+  <title>Number Base Conversion</title>
+  <link rel="stylesheet" href="baseSystem.css">
+  <script src="bin2dec.js" defer></script>
+</head>
+<body>
+  <div>
+
+    <nav>
+      <ul><li><a href="#">Share App</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Rate App</a></li>
+        <li><a href="#">More Apps</a></li>
+        <li><a href="#">Exit</a></li>
+      </ul>
+    </nav>
+    <section class="left-bar">
+      <a href="#">Rate App</a>
+    </section>
+
+    <div class="top-container">
+      <div class="sideBtn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <header>
+        <h2>Unit Converter</h2>
+      </header>
+      <div class="rating">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+  <div class="make-choice">
+    <div>
+      <label for="from">From: </label>
+      <select id="from" class="drop-values base">
+        <option value="2">Binary</option>
+        <option value="8">Octal</option>
+        <option value="10">Decimal</option>
+        <option value="16">Hexadecimal</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Value: </label>
+      <input type="text" id="val">
+    </div>
+
+    <div class="error">
+      <div></div>
+    </div>
+
+    <div>
+      <label for="to">To: </label>
+      <select class="drop-values" id="to">
+        <option value="2">Binary</option>
+        <option value="8">Octal</option>
+        <option value="10">Decimal</option>
+        <option value="16">Hexadecimal</option>
+      </select>
+    </div>
+
+    <section class="result">
+      <div></div>
+      <div id="result"></div>
+    </section>
+
+    <div class="solve">
+      <button type="click" id="calc">Calculate</button>
+      <button type="click" id="cls">Clear</button>
+    </div>
+
+  </div>
+
+<div>
+
+</body>
+</html>
